@@ -206,3 +206,100 @@ Finally, we’ll introduce PostgreSQL, set it up, and practice essential command
 ![alt text](image-30.png)
 
 ![alt text](image-31.png)
+
+## 43-8 What is PostgreSQL?
+- The World's Most Advanced Open Source Relational Database Management System(dbms). More specifically RDBMS
+
+### Why Postgres ?
+- Open Source
+- Advanced Data Types
+- Scalability
+- ACID Compliance
+- Modern
+- Indexing
+
+### 43-9 See Installation in previous modules 
+
+### 43-10 Some Postgres Commands | Add psql to PATH
+
+```
+\l
+```
+- This will show all the database of postgres
+
+![alt text](image-32.png)
+
+- postgres is the main database 
+- template0 and template1 is used for creating another database 
+- template0 is the main template because all is stored here, and the backup is template1
+- clear the terminal 
+```
+\! cls
+```
+- 
+- to see connection info 
+
+```
+\conninfo
+```
+
+- to see if any table is here 
+
+```
+\dt 
+```
+
+- create a table 
+
+```
+create table users (id serial primary key, name varchar(50));
+```
+
+![alt text](image-33.png)
+
+- see the table info 
+
+```
+select * from users;
+```
+
+![alt text](image-34.png)
+
+- see users in postgres 
+
+```
+\du
+```
+
+![alt text](image-35.png)
+
+- to see all the commands of postgres we will use 
+
+```
+\?
+```
+
+- for exiting the postgres 
+
+```
+\q
+```
+- see the version of postgres 
+
+```
+select version();
+```
+- connect is different database 
+
+```
+\c template1
+```
+
+- for running postgres in windows terminal we need to set the env variables (see previous modules)
+
+- go to c drive postgres and bin folder of version 17 then copy the path and set in environment path
+- open the windows terminal and run 
+
+```
+psql -U postgres -d postgres
+```
