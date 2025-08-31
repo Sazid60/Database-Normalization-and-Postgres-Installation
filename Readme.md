@@ -166,3 +166,43 @@ Finally, we’ll introduce PostgreSQL, set it up, and practice essential command
 - In this table there is transitive dependency. because using `stud_id` we can determine each and every field uniquely. In this way using `stud_id` we can determine `state`. But here the problem comes `state` can also determine the country. This is transitive dependency. We have to mange this separating the tables. 
 
 ![alt text](image-22.png)
+
+## 43-6 Resolving Many-to-Many Relationship, 43-7 Updating ER Diagram Using Junction Table
+- We don't want two tables has many to many relationship because handling it becomes tough
+
+![alt text](image-23.png)
+
+- The table will look like this. this will not work because atomicity is not maintained.
+
+![alt text](image-24.png)
+
+-  We have to solve this. We will simply divide in rows 
+
+![alt text](image-25.png)
+
+- here problem becomes we can not set the primary key to uniquely identify uniquely
+- Lets set a composite primary key 
+
+![alt text](image-26.png)
+
+- Here Another problem arose Partial dependency came i mean using the id we cen identify the name. According to the rule of 2 NF we can not let this happen 
+
+![alt text](image-27.png)
+
+- Lets solve this and make a different table 
+
+![alt text](image-28.png)
+
+- here another problem arose like too many empty fields came we can not keep anything that takes space without any reason 
+- we have to make `Junction Table` / `bridge table` to make the table 
+
+![alt text](image-29.png)
+
+- This make sure no many to many relationship between 2 tables came 
+- What will be the primary key of the bridge table?
+- Composite primary key will be the primary key here. 
+- Lets modify the existing er diagram 
+
+![alt text](image-30.png)
+
+![alt text](image-31.png)
