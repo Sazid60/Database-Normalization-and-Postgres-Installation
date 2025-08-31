@@ -150,3 +150,19 @@ Finally, we’ll introduce PostgreSQL, set it up, and practice essential command
 ![alt text](image-20.png)
 
 - Now it became `loss less decompositions`
+
+## 43-5 3NF Explained | Third Normal Form with Examples
+
+#### 3NF
+
+- `Rules` : 
+    1. Must be 2NF
+    2. Must not contain `transitive dependency`
+
+##### transitive dependency
+
+![alt text](image-21.png)
+- Suppose X can determine Y and Y can determine Z. Technically we can determine Z indirectly using Y. Thi is Transitive Dependency. 
+- In this table there is transitive dependency. because using `stud_id` we can determine each and every field uniquely. In this way using `stud_id` we can determine `state`. But here the problem comes `state` can also determine the country. This is transitive dependency. We have to mange this separating the tables. 
+
+![alt text](image-22.png)
