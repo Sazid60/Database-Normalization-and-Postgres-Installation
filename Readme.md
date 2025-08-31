@@ -105,4 +105,29 @@ Finally, we’ll introduce PostgreSQL, set it up, and practice essential command
 - 2NF
 - 3NF 
 
-####
+#### ONF
+- If a table is not in a 1NF we can tell its in 0NF 
+
+#### 1NF 
+- `Rules` : 
+    1. Atomic Values (like address Broken in small pieces like house, road, sector)
+    2. Unique Column Names
+    3. Can not have Positional dependency of data
+    4. Column should contain data that are of the same type
+    5. Determine Primary key
+
+![alt text](image-16.png)
+
+- lets see the table where is the problem and how to convert in 1NF
+- So far we have unique column names it ok 
+- we have no positional dependency of data 
+- In title we have to keep title not number 
+- and in course the atomicity is not maintained here is multiple course in one field
+- lets fix this 
+
+![alt text](image-17.png)
+
+- here comes the 1NF conversion
+- Still data duplication came in serial number and title 
+- here we have to consider composite primary key for determining uniquely 
+- These will be fixed in 2NF 
