@@ -303,3 +303,9 @@ select version();
 ```
 psql -U postgres -d postgres
 ```
+
+- create a database 
+
+```
+CREATE DATABASE school;
+```
